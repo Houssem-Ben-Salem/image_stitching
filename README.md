@@ -2,7 +2,9 @@
 
 This project implements and compares different image stitching methods, including traditional approaches (SIFT, ORB, AKAZE) and deep learning-based methods (SuperPoint + SuperGlue). It provides both a comprehensive evaluation framework and an interactive web interface for testing different methods.
 
-![alt text](<Screenshot from 2025-02-02 16-36-42.png>)
+
+![Screenshot from 2025-02-02 16-36-42](https://github.com/user-attachments/assets/f9cd7915-e9a0-4c83-8fcd-13764bbd8412)
+
 
 ## Authors
 - Ben Salem Houssem
