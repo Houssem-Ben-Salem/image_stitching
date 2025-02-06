@@ -2,6 +2,10 @@
 
 This project implements and compares different image stitching methods, including traditional approaches (SIFT, ORB, AKAZE) and deep learning-based methods (SuperPoint + SuperGlue). It provides both a comprehensive evaluation framework and an interactive web interface for testing different methods.
 
+## Authors
+- Ben Salem Houssem
+- Sauvé Catherine
+
 ## Features
 
 - Multiple stitching methods:
@@ -23,8 +27,8 @@ This project implements and compares different image stitching methods, includin
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/image-stitching-comparison.git
-cd image-stitching-comparison
+git clone https://github.com/Houssem-Ben-Salem/image_stitching.git
+cd image_stitching
 ```
 
 2. Create and activate a virtual environment (optional but recommended):
@@ -100,6 +104,18 @@ To visualize the comparison between methods:
 python experiments/compare_methods.py
 ```
 
+# 🔧 Configuration
+
+Each method can be configured through its respective config file:
+```python
+sift_config = {
+    'nfeatures': 0,
+    'n_octave_layers': 3,
+    'contrast_threshold': 0.04,
+    # ...
+}
+```
+
 ## Evaluation Metrics
 
 - **Mean Corner Error (MCE)**: Measures the average distance between transformed corners using estimated vs. ground truth homography
@@ -108,7 +124,3 @@ python experiments/compare_methods.py
 - **PSNR**: Measures peak signal-to-noise ratio in overlapping regions
 - **Time**: Processing time for feature detection, matching, and stitching
 - **Memory**: Peak memory usage during processing
-
-## Results
-
-Example results and comparisons can be found in the `
