@@ -1,0 +1,344 @@
+Evaluation Summary:
+================================================================================
+
+VIEWPOINT SEQUENCES:
+----------------------------------------
+
+SIFT:
+  mce:
+    Mean: 48.304
+    Std:  274.701
+    Med:  1.802
+  reprojection_error:
+    Mean: 17.057
+    Std:  97.255
+    Med:  0.474
+  inlier_ratio:
+    Mean: 0.759
+    Std:  0.216
+    Med:  0.823
+  num_matches:
+    Mean: 1369.034
+    Std:  1412.148
+    Med:  896.000
+  ssim:
+    Mean: 0.655
+    Std:  0.194
+    Med:  0.618
+  psnr:
+    Mean: 28.556
+    Std:  1.129
+    Med:  28.161
+  ghosting:
+    Mean: 123.826
+    Std:  38.058
+    Med:  126.327
+  repeatability:
+    Mean: 0.782
+    Std:  0.230
+    Med:  0.876
+  time_total:
+    Mean: 1.186
+    Std:  0.806
+    Med:  0.991
+  memory_usage:
+    Mean: 16.622
+    Std:  34.583
+    Med:  1.750
+
+ORB:
+  mce:
+    Mean: 98.955
+    Std:  637.573
+    Med:  3.686
+  reprojection_error:
+    Mean: 11.887
+    Std:  84.278
+    Med:  0.702
+  inlier_ratio:
+    Mean: 0.804
+    Std:  0.196
+    Med:  0.864
+  num_matches:
+    Mean: 394.748
+    Std:  430.970
+    Med:  223.000
+  ssim:
+    Mean: 0.642
+    Std:  0.187
+    Med:  0.609
+  psnr:
+    Mean: 28.550
+    Std:  1.021
+    Med:  28.225
+  ghosting:
+    Mean: 123.534
+    Std:  37.265
+    Med:  126.413
+  repeatability:
+    Mean: 0.855
+    Std:  0.212
+    Med:  0.961
+  time_total:
+    Mean: 0.271
+    Std:  0.062
+    Med:  0.281
+  memory_usage:
+    Mean: 1.240
+    Std:  10.107
+    Med:  0.000
+
+AKAZE:
+  mce:
+    Mean: 54.099
+    Std:  340.522
+    Med:  2.700
+  reprojection_error:
+    Mean: 7.301
+    Std:  45.157
+    Med:  0.568
+  inlier_ratio:
+    Mean: 0.866
+    Std:  0.158
+    Med:  0.914
+  num_matches:
+    Mean: 284.427
+    Std:  478.308
+    Med:  137.000
+  ssim:
+    Mean: 0.634
+    Std:  0.197
+    Med:  0.595
+  psnr:
+    Mean: 28.660
+    Std:  1.172
+    Med:  28.300
+  ghosting:
+    Mean: 126.109
+    Std:  38.653
+    Med:  127.177
+  repeatability:
+    Mean: 0.906
+    Std:  0.190
+    Med:  0.987
+  time_total:
+    Mean: 0.586
+    Std:  0.355
+    Med:  0.481
+  memory_usage:
+    Mean: 2.365
+    Std:  10.544
+    Med:  0.000
+
+SuperPoint:
+  mce:
+    Mean: 11.398
+    Std:  50.066
+    Med:  1.698
+  reprojection_error:
+    Mean: 6.803
+    Std:  72.311
+    Med:  0.497
+  inlier_ratio:
+    Mean: 0.705
+    Std:  0.139
+    Med:  0.720
+  num_matches:
+    Mean: 495.636
+    Std:  169.590
+    Med:  504.500
+  ssim:
+    Mean: 0.643
+    Std:  0.187
+    Med:  0.609
+  psnr:
+    Mean: 28.490
+    Std:  1.009
+    Med:  28.188
+  ghosting:
+    Mean: 124.589
+    Std:  38.602
+    Med:  126.306
+  repeatability:
+    Mean: 0.730
+    Std:  0.150
+    Med:  0.747
+  time_total:
+    Mean: 0.556
+    Std:  0.143
+    Med:  0.554
+  memory_usage:
+    Mean: 1.455
+    Std:  9.727
+    Med:  0.000
+
+ILLUMINATION SEQUENCES:
+----------------------------------------
+
+SIFT:
+  mce:
+    Mean: 18.800
+    Std:  109.989
+    Med:  0.666
+  reprojection_error:
+    Mean: 11.646
+    Std:  66.796
+    Med:  0.338
+  inlier_ratio:
+    Mean: 0.780
+    Std:  0.204
+    Med:  0.851
+  num_matches:
+    Mean: 616.324
+    Std:  752.500
+    Med:  358.500
+  ssim:
+    Mean: 0.671
+    Std:  0.161
+    Med:  0.716
+  psnr:
+    Mean: 29.096
+    Std:  1.398
+    Med:  28.650
+  ghosting:
+    Mean: 122.959
+    Std:  37.459
+    Med:  124.324
+  repeatability:
+    Mean: 0.736
+    Std:  0.267
+    Med:  0.846
+  time_total:
+    Mean: 0.991
+    Std:  2.047
+    Med:  0.348
+  memory_usage:
+    Mean: 3.517
+    Std:  9.278
+    Med:  1.375
+
+ORB:
+  mce:
+    Mean: 25.044
+    Std:  125.094
+    Med:  1.026
+  reprojection_error:
+    Mean: 6.131
+    Std:  30.322
+    Med:  0.284
+  inlier_ratio:
+    Mean: 0.875
+    Std:  0.183
+    Med:  0.962
+  num_matches:
+    Mean: 518.938
+    Std:  677.676
+    Med:  234.500
+  ssim:
+    Mean: 0.666
+    Std:  0.169
+    Med:  0.713
+  psnr:
+    Mean: 29.174
+    Std:  1.433
+    Med:  28.707
+  ghosting:
+    Mean: 121.611
+    Std:  38.496
+    Med:  123.387
+  repeatability:
+    Mean: 0.852
+    Std:  0.224
+    Med:  0.972
+  time_total:
+    Mean: 0.225
+    Std:  0.098
+    Med:  0.244
+  memory_usage:
+    Mean: 0.593
+    Std:  3.814
+    Med:  0.000
+
+AKAZE:
+  mce:
+    Mean: 4.227
+    Std:  10.288
+    Med:  1.152
+  reprojection_error:
+    Mean: 1.448
+    Std:  3.976
+    Med:  0.391
+  inlier_ratio:
+    Mean: 0.944
+    Std:  0.057
+    Med:  0.967
+  num_matches:
+    Mean: 327.350
+    Std:  569.954
+    Med:  144.000
+  ssim:
+    Mean: 0.705
+    Std:  0.140
+    Med:  0.747
+  psnr:
+    Mean: 29.445
+    Std:  1.505
+    Med:  29.147
+  ghosting:
+    Mean: 121.751
+    Std:  41.072
+    Med:  122.592
+  repeatability:
+    Mean: 0.899
+    Std:  0.243
+    Med:  0.988
+  time_total:
+    Mean: 0.460
+    Std:  0.665
+    Med:  0.187
+  memory_usage:
+    Mean: 3.763
+    Std:  7.793
+    Med:  0.000
+
+SuperPoint:
+  mce:
+    Mean: 16.459
+    Std:  172.319
+    Med:  0.791
+  reprojection_error:
+    Mean: 4.798
+    Std:  40.623
+    Med:  0.394
+  inlier_ratio:
+    Mean: 0.752
+    Std:  0.140
+    Med:  0.773
+  num_matches:
+    Mean: 623.199
+    Std:  200.485
+    Med:  646.000
+  ssim:
+    Mean: 0.671
+    Std:  0.155
+    Med:  0.714
+  psnr:
+    Mean: 29.103
+    Std:  1.406
+    Med:  28.678
+  ghosting:
+    Mean: 122.652
+    Std:  37.904
+    Med:  124.383
+  repeatability:
+    Mean: 0.670
+    Std:  0.223
+    Med:  0.711
+  time_total:
+    Mean: 0.499
+    Std:  0.454
+    Med:  0.359
+  memory_usage:
+    Mean: 0.356
+    Std:  2.923
+    Med:  0.000

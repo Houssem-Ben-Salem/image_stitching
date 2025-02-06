@@ -1,0 +1,33 @@
+Results for num_matches:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 1369.034
+  Std:  1412.148
+  Med:  896.000
+  Min:  27.000
+  Max:  6792.000
+
+ORB:
+  Mean: 394.748
+  Std:  430.970
+  Med:  223.000
+  Min:  10.000
+  Max:  1896.000
+
+AKAZE:
+  Mean: 284.427
+  Std:  478.308
+  Med:  137.000
+  Min:  10.000
+  Max:  3936.000
+
+SuperPoint:
+  Mean: 495.636
+  Std:  169.590
+  Med:  504.500
+  Min:  25.000
+  Max:  857.000

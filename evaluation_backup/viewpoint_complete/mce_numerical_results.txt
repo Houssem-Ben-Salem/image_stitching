@@ -1,0 +1,33 @@
+Results for mce:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 48.304
+  Std:  274.701
+  Med:  1.802
+  Min:  0.108
+  Max:  2612.682
+
+ORB:
+  Mean: 98.955
+  Std:  637.573
+  Med:  3.686
+  Min:  0.257
+  Max:  6741.977
+
+AKAZE:
+  Mean: 54.099
+  Std:  340.522
+  Med:  2.700
+  Min:  0.205
+  Max:  3095.556
+
+SuperPoint:
+  Mean: 11.398
+  Std:  50.066
+  Med:  1.698
+  Min:  0.151
+  Max:  433.281

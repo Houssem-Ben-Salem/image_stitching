@@ -1,0 +1,63 @@
+Results for reprojection_error:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 17.057
+  Std:  97.255
+  Med:  0.474
+  Min:  0.036
+  Max:  695.332
+
+ORB:
+  Mean: 11.887
+  Std:  84.278
+  Med:  0.702
+  Min:  0.130
+  Max:  803.067
+
+AKAZE:
+  Mean: 7.301
+  Std:  45.157
+  Med:  0.568
+  Min:  0.080
+  Max:  387.282
+
+SuperPoint:
+  Mean: 6.803
+  Std:  72.311
+  Med:  0.497
+  Min:  0.094
+  Max:  859.316
+
+ILLUMINATION:
+
+SIFT:
+  Mean: 11.646
+  Std:  66.796
+  Med:  0.338
+  Min:  0.015
+  Max:  655.820
+
+ORB:
+  Mean: 6.131
+  Std:  30.322
+  Med:  0.284
+  Min:  0.016
+  Max:  233.616
+
+AKAZE:
+  Mean: 1.448
+  Std:  3.976
+  Med:  0.391
+  Min:  0.027
+  Max:  33.920
+
+SuperPoint:
+  Mean: 4.798
+  Std:  40.623
+  Med:  0.394
+  Min:  0.035
+  Max:  482.677

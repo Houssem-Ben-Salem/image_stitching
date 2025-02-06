@@ -1,0 +1,33 @@
+Results for ghosting:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 123.826
+  Std:  38.058
+  Med:  126.327
+  Min:  26.179
+  Max:  225.853
+
+ORB:
+  Mean: 123.534
+  Std:  37.265
+  Med:  126.413
+  Min:  26.282
+  Max:  224.612
+
+AKAZE:
+  Mean: 126.109
+  Std:  38.653
+  Med:  127.177
+  Min:  27.834
+  Max:  225.541
+
+SuperPoint:
+  Mean: 124.589
+  Std:  38.602
+  Med:  126.306
+  Min:  25.781
+  Max:  225.774

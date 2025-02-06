@@ -1,0 +1,63 @@
+Results for time_total:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 1.186
+  Std:  0.806
+  Med:  0.991
+  Min:  0.136
+  Max:  4.160
+
+ORB:
+  Mean: 0.271
+  Std:  0.062
+  Med:  0.281
+  Min:  0.026
+  Max:  0.416
+
+AKAZE:
+  Mean: 0.586
+  Std:  0.355
+  Med:  0.481
+  Min:  0.070
+  Max:  1.705
+
+SuperPoint:
+  Mean: 0.556
+  Std:  0.143
+  Med:  0.554
+  Min:  0.176
+  Max:  0.991
+
+ILLUMINATION:
+
+SIFT:
+  Mean: 0.991
+  Std:  2.047
+  Med:  0.348
+  Min:  0.141
+  Max:  13.170
+
+ORB:
+  Mean: 0.225
+  Std:  0.098
+  Med:  0.244
+  Min:  0.032
+  Max:  0.624
+
+AKAZE:
+  Mean: 0.460
+  Std:  0.665
+  Med:  0.187
+  Min:  0.072
+  Max:  3.230
+
+SuperPoint:
+  Mean: 0.499
+  Std:  0.454
+  Med:  0.359
+  Min:  0.149
+  Max:  2.509

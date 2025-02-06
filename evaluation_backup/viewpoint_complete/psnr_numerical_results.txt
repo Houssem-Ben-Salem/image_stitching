@@ -1,0 +1,33 @@
+Results for psnr:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 28.556
+  Std:  1.129
+  Med:  28.161
+  Min:  27.576
+  Max:  34.945
+
+ORB:
+  Mean: 28.550
+  Std:  1.021
+  Med:  28.225
+  Min:  27.579
+  Max:  34.597
+
+AKAZE:
+  Mean: 28.660
+  Std:  1.172
+  Med:  28.300
+  Min:  27.577
+  Max:  34.832
+
+SuperPoint:
+  Mean: 28.490
+  Std:  1.009
+  Med:  28.188
+  Min:  27.567
+  Max:  35.256

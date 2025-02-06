@@ -1,0 +1,33 @@
+Results for repeatability:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 0.782
+  Std:  0.230
+  Med:  0.876
+  Min:  0.016
+  Max:  0.999
+
+ORB:
+  Mean: 0.855
+  Std:  0.212
+  Med:  0.961
+  Min:  0.000
+  Max:  1.000
+
+AKAZE:
+  Mean: 0.906
+  Std:  0.190
+  Med:  0.987
+  Min:  0.167
+  Max:  1.000
+
+SuperPoint:
+  Mean: 0.730
+  Std:  0.150
+  Med:  0.747
+  Min:  0.077
+  Max:  0.944

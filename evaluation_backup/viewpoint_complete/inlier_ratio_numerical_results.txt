@@ -1,0 +1,33 @@
+Results for inlier_ratio:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 0.759
+  Std:  0.216
+  Med:  0.823
+  Min:  0.144
+  Max:  0.998
+
+ORB:
+  Mean: 0.804
+  Std:  0.196
+  Med:  0.864
+  Min:  0.227
+  Max:  1.000
+
+AKAZE:
+  Mean: 0.866
+  Std:  0.158
+  Med:  0.914
+  Min:  0.234
+  Max:  1.000
+
+SuperPoint:
+  Mean: 0.705
+  Std:  0.139
+  Med:  0.720
+  Min:  0.231
+  Max:  0.950

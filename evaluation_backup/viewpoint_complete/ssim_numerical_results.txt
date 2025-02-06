@@ -1,0 +1,33 @@
+Results for ssim:
+==================================================
+
+
+VIEWPOINT:
+
+SIFT:
+  Mean: 0.655
+  Std:  0.194
+  Med:  0.618
+  Min:  0.221
+  Max:  0.992
+
+ORB:
+  Mean: 0.642
+  Std:  0.187
+  Med:  0.609
+  Min:  0.221
+  Max:  0.982
+
+AKAZE:
+  Mean: 0.634
+  Std:  0.197
+  Med:  0.595
+  Min:  0.221
+  Max:  0.988
+
+SuperPoint:
+  Mean: 0.643
+  Std:  0.187
+  Med:  0.609
+  Min:  0.221
+  Max:  0.974
