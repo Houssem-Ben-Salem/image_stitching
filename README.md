@@ -2,6 +2,8 @@
 
 This project implements and compares different image stitching methods, including traditional approaches (SIFT, ORB, AKAZE) and deep learning-based methods (SuperPoint + SuperGlue). It provides both a comprehensive evaluation framework and an interactive web interface for testing different methods.
 
+![alt text](<Screenshot from 2025-02-02 16-36-42.png>)
+
 ## Authors
 - Ben Salem Houssem
 - Sauvé Catherine
@@ -104,7 +106,7 @@ To visualize the comparison between methods:
 python experiments/compare_methods.py
 ```
 
-# 🔧 Configuration
+### onfiguration
 
 Each method can be configured through its respective config file:
 ```python
