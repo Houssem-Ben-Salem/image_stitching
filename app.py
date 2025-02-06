@@ -41,67 +41,58 @@ def parse_evaluation_summary(file_path='evaluation_results/evaluation_summary.tx
             'SuperPoint': {'viewpoint': {}, 'illumination': {}}
         }
         
+        # Track parsing state
         current_method = None
         current_sequence = None
         current_metric = None
-        in_metric_block = False
         
         lines = file_content.split('\n')
         i = 0
         while i < len(lines):
             line = lines[i].strip()
             
+            # Skip empty lines and separators
+            if not line or line.startswith('====') or line.startswith('----'):
+                i += 1
+                continue
+            
             # Detect sequence type
             if 'VIEWPOINT SEQUENCES:' in line:
                 current_sequence = 'viewpoint'
+                print(f"\nSwitched to {current_sequence} sequence")
                 i += 1
                 continue
             elif 'ILLUMINATION SEQUENCES:' in line:
                 current_sequence = 'illumination'
+                print(f"\nSwitched to {current_sequence} sequence")
                 i += 1
                 continue
             
             # Detect method
             if line in ['SIFT:', 'ORB:', 'AKAZE:', 'SuperPoint:']:
-                current_method = line[:-1]
+                current_method = line.rstrip(':')
+                print(f"\nProcessing method: {current_method}")
                 i += 1
                 continue
             
-            # Detect metric block
-            if line and not line.startswith(' ') and line.endswith(':'):
-                current_metric = line[:-1].lower()  # Convert to lowercase for consistency
-                in_metric_block = True
-                i += 1
-                continue
-            
-            # Parse mean value within a metric block
-            if in_metric_block and line.startswith('    Mean:') and current_method and current_sequence:
-                try:
-                    value = float(line.split(':')[1].strip())
-                    # Handle special values
-                    if value == float('inf') or value == float('-inf') or np.isnan(value):
-                        if 'Med:' in lines[i+2]:  # Use median if mean is inf/nan
-                            value = float(lines[i+2].split(':')[1].strip())
-                        else:
-                            value = 0
-                    method_data[current_method][current_sequence][current_metric] = value
-                    in_metric_block = False
-                except (ValueError, IndexError) as e:
-                    print(f"Error parsing value for {current_method} - {current_metric}: {e}")
-                
+            # Detect metric
+            if current_method and current_sequence:
+                if line.endswith(':') and not line.startswith('    '):
+                    current_metric = line.rstrip(':')
+                    # Look ahead for Mean value
+                    for j in range(1, 4):  # Look at next few lines
+                        if i + j < len(lines):
+                            next_line = lines[i + j].strip()
+                            if next_line.startswith('Mean:'):
+                                try:
+                                    value = float(next_line.split(':')[1].strip())
+                                    method_data[current_method][current_sequence][current_metric] = value
+                                    print(f"Added {current_metric} = {value} for {current_method}/{current_sequence}")
+                                except (ValueError, IndexError) as e:
+                                    print(f"Error parsing value: {e}")
+                                break
             i += 1
-        
-        # Debug output
-        print(f"\nParsed metrics for methods: {list(method_data.keys())}")
-        for method in method_data:
-            print(f"\n{method} metrics:")
-            if method_data[method]['viewpoint']:
-                print(f"Viewpoint: {list(method_data[method]['viewpoint'].keys())}")
-                print(f"Sample values: {dict(list(method_data[method]['viewpoint'].items())[:3])}")
-            if method_data[method]['illumination']:
-                print(f"Illumination: {list(method_data[method]['illumination'].keys())}")
-                print(f"Sample values: {dict(list(method_data[method]['illumination'].items())[:3])}")
-        
+
         return method_data
         
     except Exception as e:
@@ -112,24 +103,31 @@ def parse_evaluation_summary(file_path='evaluation_results/evaluation_summary.tx
 
 def format_metric(value, decimal_places=3):
     """Helper function to safely format metric values."""
-    if isinstance(value, (int, float)):
-        if decimal_places == 0:
-            return f"{value:.0f}"
-        return f"{value:.{decimal_places}f}"
-    return str(value)
+    try:
+        if isinstance(value, (int, float)):
+            if decimal_places == 0:
+                return f"{value:.0f}"
+            return f"{value:.{decimal_places}f}"
+        return str(value)
+    except:
+        return 'N/A'
 
 def update_method_info(method_name):
     """Update method information display with current evaluation results."""
     try:
+        print(f"\nUpdating info for method: {method_name}")
         method_info = parse_evaluation_summary()
+        
         if not method_info or method_name not in method_info:
+            print(f"No data available for {method_name}")
             return f"No evaluation data available for {method_name}."
             
         info = method_info[method_name]
+        vp = info.get('viewpoint', {})
+        il = info.get('illumination', {})
         
-        # Get viewpoint and illumination metrics
-        vp = info['viewpoint']
-        il = info['illumination']
+        print(f"Viewpoint metrics found: {list(vp.keys())}")
+        print(f"Illumination metrics found: {list(il.keys())}")
         
         display_text = f"""【 {method_name} Performance Statistics 】
 
@@ -139,7 +137,7 @@ def update_method_info(method_name):
 - SSIM: {format_metric(vp.get('ssim', 'N/A'))}
 - PSNR: {format_metric(vp.get('psnr', 'N/A'), 1)}
 - Time: {format_metric(vp.get('time_total', 'N/A'))}s
-- Memory: {format_metric(max(0, vp.get('memory_usage', 0)), 1)}MB
+- Memory: {format_metric(vp.get('memory_usage', 0), 1)}MB
 
 🔍 Illumination Performance:
 - MCE: {format_metric(il.get('mce', 'N/A'))} (lower is better)
@@ -150,10 +148,14 @@ def update_method_info(method_name):
 💡 Key Strengths:
 {get_method_strengths(method_name)}"""
 
+        print("Generated display text:")
+        print(display_text)
         return display_text
         
     except Exception as e:
         print(f"Error updating method information: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return f"Error displaying statistics for {method_name}."
 
 def update_superglue_visibility(method):
@@ -325,23 +327,22 @@ with gr.Blocks(title="Image Stitching App") as demo:
         
         # Right column for outputs
         with gr.Column(scale=2):
-            # Outputs
             matches_output = gr.Image(label="Feature Matches")
             result_output = gr.Image(label="Stitching Result")
             process_info = gr.Textbox(label="Process Information", lines=4)
     
-    # Update SuperGlue model visibility
-    method_input.change(
-        fn=update_superglue_visibility,
-        inputs=method_input,
-        outputs=superglue_input
-    )
+    # Event handlers
+    def on_method_change(method):
+        """Handle method change event."""
+        stats = update_method_info(method)
+        visibility = update_superglue_visibility(method)
+        return [stats, visibility]
     
-    # Update method information when method changes
+    # Connect events with proper return values
     method_input.change(
-        fn=update_method_info,
-        inputs=method_input,
-        outputs=method_info
+        fn=on_method_change,
+        inputs=[method_input],
+        outputs=[method_info, superglue_input]
     )
     
     # Connect the submit button
